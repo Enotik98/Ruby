@@ -19,7 +19,11 @@ end
 def f(start_x, end_x, dx, a, b, c)
   puts "Expression's value: ", a.truncate & (b.truncate | c.truncate)
 
-  if a.truncate & (b.truncate | c.truncate) == 0
+  if a.truncate & (b.truncate | c.truncate) != 0
+    a = a.to_f
+    b = b.to_f
+    c = c.to_f
+  else
     a = a.to_i
     b = b.to_i
     c = c.to_i
